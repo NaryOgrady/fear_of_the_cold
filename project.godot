@@ -1,0 +1,188 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://src/actor.gd"
+}, {
+"base": "GoapAction",
+"class": "BuildFireAction",
+"language": "GDScript",
+"path": "res://src/goap/action/build_fire.gd"
+}, {
+"base": "State",
+"class": "BuildState",
+"language": "GDScript",
+"path": "res://src/state/build.gd"
+}, {
+"base": "State",
+"class": "Chop",
+"language": "GDScript",
+"path": "res://src/state/chop.gd"
+}, {
+"base": "GoapAction",
+"class": "ChopTreeAction",
+"language": "GDScript",
+"path": "res://src/goap/action/chop_tree.gd"
+}, {
+"base": "GoapAction",
+"class": "EatMushroomAction",
+"language": "GDScript",
+"path": "res://src/goap/action/eat_mushroom.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Firepit",
+"language": "GDScript",
+"path": "res://src/objects/firepit.gd"
+}, {
+"base": "Node",
+"class": "Goap",
+"language": "GDScript",
+"path": "res://src/goap/goap.gd"
+}, {
+"base": "Node",
+"class": "GoapAction",
+"language": "GDScript",
+"path": "res://src/goap/action/action.gd"
+}, {
+"base": "Node",
+"class": "GoapActionPlanner",
+"language": "GDScript",
+"path": "res://src/goap/action_planner.gd"
+}, {
+"base": "Node",
+"class": "GoapAgent",
+"language": "GDScript",
+"path": "res://src/goap/agent/agent.gd"
+}, {
+"base": "Node",
+"class": "GoapGoal",
+"language": "GDScript",
+"path": "res://src/goap/goal/goal.gd"
+}, {
+"base": "State",
+"class": "Idle",
+"language": "GDScript",
+"path": "res://src/state/idle.gd"
+}, {
+"base": "GoapGoal",
+"class": "KeepFedGoal",
+"language": "GDScript",
+"path": "res://src/goap/goal/keep_fed.gd"
+}, {
+"base": "GoapGoal",
+"class": "KeepWarmGoal",
+"language": "GDScript",
+"path": "res://src/goap/goal/keep_warm.gd"
+}, {
+"base": "State",
+"class": "Move",
+"language": "GDScript",
+"path": "res://src/state/move.gd"
+}, {
+"base": "TileMap",
+"class": "Pathfinder",
+"language": "GDScript",
+"path": "res://src/pathfinder.gd"
+}, {
+"base": "GoapGoal",
+"class": "RelaxGoal",
+"language": "GDScript",
+"path": "res://src/goap/goal/relax.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/state/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/state/state_machine.gd"
+}, {
+"base": "StaticBody2D",
+"class": "TreeObject",
+"language": "GDScript",
+"path": "res://src/objects/tree.gd"
+} ]
+_global_script_class_icons={
+"Actor": "",
+"BuildFireAction": "",
+"BuildState": "",
+"Chop": "",
+"ChopTreeAction": "",
+"EatMushroomAction": "",
+"Firepit": "",
+"Goap": "",
+"GoapAction": "",
+"GoapActionPlanner": "",
+"GoapAgent": "",
+"GoapGoal": "",
+"Idle": "",
+"KeepFedGoal": "",
+"KeepWarmGoal": "",
+"Move": "",
+"Pathfinder": "",
+"RelaxGoal": "",
+"State": "",
+"StateMachine": "",
+"TreeObject": ""
+}
+
+[application]
+
+config/name="to_build_a_fire"
+run/main_scene="res://scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+WorldState="*res://src/world.gd"
+
+[display]
+
+window/size/width=480
+window/size/height=270
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
